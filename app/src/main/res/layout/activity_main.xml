@@ -24,6 +24,13 @@
             android:layout_height="wrap_content"
             android:onClick="addClient"
             android:text="Add Client" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addOrder"
+            android:text="Add order" />
     </LinearLayout>
 
     <TextView

@@ -4,6 +4,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.svalero.aa1pmdmrecu.database.TimestampConverter;
+
+import java.time.LocalDate;
 
 @Entity
 public class Order {
@@ -11,16 +16,20 @@ public class Order {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo
+    @TypeConverters({TimestampConverter.class})
+    private LocalDate date;
+    @ColumnInfo
     private int clientId;
     @ColumnInfo
-    private int bikeId;
+    private int carId;
     @ColumnInfo
     private String description;
 
-    public Order(int id, int clientId, int bikeId, String description) {
+    public Order(int id, LocalDate date, int clientId, int carId, String description) {
         this.id = id;
+        this.date = date;
         this.clientId = clientId;
-        this.bikeId = bikeId;
+        this.carId = carId;
         this.description = description;
     }
 
@@ -32,6 +41,14 @@ public class Order {
         this.id = id;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     public int getClientId() {
         return clientId;
     }
@@ -40,12 +57,12 @@ public class Order {
         this.clientId = clientId;
     }
 
-    public int getBikeId() {
-        return bikeId;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setBikeId(int bikeId) {
-        this.bikeId = bikeId;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public String getDescription() {
