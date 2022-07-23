@@ -6,8 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.svalero.aa1pmdmrecu.R;
 import com.svalero.aa1pmdmrecu.domain.Client;
+import com.svalero.aa1pmdmrecu.util.ImageUtils;
 
 
 import java.util.ArrayList;
@@ -28,7 +32,7 @@ public class ClientAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Client client = (Client) getItem(position);
-/*
+
         convertView = inflater.inflate(R.layout.client_and_car_adapter, null);
         ImageView clientImage = (ImageView) convertView.findViewById(R.id.client_car_item_imageView);
         TextView clientNameAndSurnameTv = convertView.findViewById(R.id.client_car_tv1);
@@ -39,7 +43,7 @@ public class ClientAdapter extends BaseAdapter {
         }
         clientNameAndSurnameTv.setText(client.getName() + " " + client.getSurname());
         clientDniTv.setText(client.getDni());
-*/
+
         return convertView;
     }
 

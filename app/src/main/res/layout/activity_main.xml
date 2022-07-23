@@ -38,6 +38,13 @@
             android:layout_height="wrap_content"
             android:onClick="viewCar"
             android:text="View Cars" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewClient"
+            android:text="View Client" />
     </LinearLayout>
 
     <TextView

@@ -34,5 +34,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void viewClient(View view) {
+        Intent intent = new Intent(this, ViewClientActivity.class);
+        startActivity(intent);
+    }
+
 
 }
