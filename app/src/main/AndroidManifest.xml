@@ -25,6 +25,9 @@
         android:theme="@style/Theme.AA1PMDMrecu"
         tools:targetApi="31">
         <activity
+            android:name=".ViewCarActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddOrderActivity"
             android:exported="false" />
         <activity
