@@ -19,6 +19,9 @@ public interface CarDao {
     @Query("SELECT * FROM `car`")
     List<Car> getAll();
 
+    @Query("SELECT * FROM car WHERE id = :id")
+    Car getCarById(int id);
+
     @Query("SELECT * FROM car WHERE clientId = :clientId")
     List<Car> getCarsByClientId(int clientId);
 

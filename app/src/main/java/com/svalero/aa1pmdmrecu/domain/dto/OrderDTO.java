@@ -2,10 +2,15 @@ package com.svalero.aa1pmdmrecu.domain.dto;
 
 import androidx.room.Ignore;
 
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Objects;
+
 public class OrderDTO implements Comparable {
 
 
     private int id;
+    private LocalDate date;
     private String clientNameSurname;  // Client
     private String carBrandModel;    // Client
     private String carLicensePlate;    // Car
@@ -13,8 +18,9 @@ public class OrderDTO implements Comparable {
     private String description;     //Order
 
 
-    public OrderDTO(int id, String clientNameSurname, String carBrandModel, String carLicensePlate, byte[] carImageOrder, String description) {
+    public OrderDTO(int id, LocalDate date, String clientNameSurname, String carBrandModel, String carLicensePlate, byte[] carImageOrder, String description) {
         this.id = id;
+        this.date = date;
         this.clientNameSurname = clientNameSurname;
         this.carBrandModel = carBrandModel;
         this.carLicensePlate = carLicensePlate;
@@ -29,6 +35,14 @@ public class OrderDTO implements Comparable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public String getClientNameSurname() {
@@ -67,16 +81,41 @@ public class OrderDTO implements Comparable {
         this.description = description;
     }
 
-
+    public String getCarLicensePlate() {
+        return carLicensePlate;
+    }
 
 
     @Ignore
     public OrderDTO() {
     }
 
-    public String getCarLicensePlate() {
-        return carLicensePlate;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderDTO orderDTO = (OrderDTO) o;
+        return id == orderDTO.id && date.equals(orderDTO.date);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(date);
+    }
+
+
+    @Override
+    public String toString() {
+        return "OrderDTO{" +
+                "id=" + id +
+                ", date=" + date +
+                ", clientNameSurname='" + clientNameSurname + '\'' +
+                ", bikeBrandModel='" + carBrandModel + '\'' +
+                ", description='" + description + '\'' +
+                ", bikeImageOrder=" + Arrays.toString(carImageOrder) +
+                '}';
+    }
+
 
 
     @Override

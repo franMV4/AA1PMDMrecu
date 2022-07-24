@@ -33,11 +33,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ViewCarActivity.class);
         startActivity(intent);
     }
-
+    public void viewOrder(View view) {
+        Intent intent = new Intent(this, ViewOrderActivity.class);
+        startActivity(intent);
+    }
     public void viewClient(View view) {
         Intent intent = new Intent(this, ViewClientActivity.class);
         startActivity(intent);
     }
+
+
+
 
 
 }

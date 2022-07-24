@@ -1,9 +1,12 @@
 package com.svalero.aa1pmdmrecu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.room.Room;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -15,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 import com.svalero.aa1pmdmrecu.database.AppDatabase;
 import com.svalero.aa1pmdmrecu.domain.Car;
 import com.svalero.aa1pmdmrecu.domain.Client;
@@ -34,6 +38,8 @@ public class AddCarActivity extends AppCompatActivity {
     private EditText etModel;
     private EditText etLicensePlate;
     private Intent intent;
+    private int SELECT_PICTURE_RESULT = 1;
+
 
     private boolean modifyCar;
     public ArrayList<Client> clients;
@@ -144,21 +150,45 @@ public class AddCarActivity extends AppCompatActivity {
 
 
     public void takePhoto(View view) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+      /*  Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, 1);
         }
+
+       */if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) !=
+                PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.CAMERA}, 1);
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
+        }
+
     }
 
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
 
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+/*
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             carImage.setImageBitmap(imageBitmap);
+        }
+    }*/
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            // Coloca la foto en un ImageView que debería tener en el layout de la Activity
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            ImageView imageView = findViewById(R.id.car_imageView);
+            imageView.setImageBitmap(imageBitmap);
         }
     }
 
