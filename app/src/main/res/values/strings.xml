@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AA1PMDMrecu</string>
+    <string name="app_name" translatable="false">AA1PMDMrecu</string>
 
 
     <string name="add_client">Añadir cliente</string>
@@ -14,7 +14,7 @@
     <string name="client_capital">CLIENTE</string>
     <string name="car_capital">COCHE</string>
     <string name="order_capital">ORDEN</string>
-    <string name="dni">DNI</string>
+    <string name="dni" translatable="false">DNI</string>
     <string name="no_retired">No está jubilado</string>
     <string name="retired">Está jubilado</string>
     <string name="description">Descripción</string>
@@ -23,7 +23,7 @@
     <string name="modify_capital">MODIFICAR</string>
 
 
-    <string name="google_maps_key">AIzaSyCc_TkHTpHk0IiBsAZajhqxYpaTNngXUZ8</string>
+    <string name="google_maps_key" translatable="false">AIzaSyCc_TkHTpHk0IiBsAZajhqxYpaTNngXUZ8</string>
 
 
     <string name="are_you_sure_delete_order">¿Estás seguro de eliminar la orden para siempre?</string>
@@ -34,7 +34,7 @@
     <string name="added_order">Orden añadida</string>
     <string name="modified_order">Orden modificada</string>
     <string name="complete_all_fields">Completa todos los campos</string>
-    <string name="select_car">Selecciona una moto</string>
+    <string name="select_car">Selecciona un coche</string>
     <string name="added_client">Cliente añadido</string>
     <string name="modified_client">Cliente modificado</string>
     <string name="select_map_position">Selecciona una posición en el mapa</string>
