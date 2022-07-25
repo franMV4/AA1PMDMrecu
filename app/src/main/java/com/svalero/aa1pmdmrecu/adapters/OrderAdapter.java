@@ -6,9 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
+import com.svalero.aa1pmdmrecu.R;
 import com.svalero.aa1pmdmrecu.domain.dto.OrderDTO;
+import com.svalero.aa1pmdmrecu.util.DateUtils;
+import com.svalero.aa1pmdmrecu.util.ImageUtils;
 
 import java.util.ArrayList;
 
@@ -29,7 +34,7 @@ public class OrderAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         OrderDTO orderDTO = (OrderDTO) getItem(position);
-/*
+
         convertView = inflater.inflate(R.layout.client_and_car_adapter, null);
         ImageView orderCarImage = convertView.findViewById(R.id.client_car_item_imageView);
         TextView orderDateAndCarModel = convertView.findViewById(R.id.client_car_tv1);
@@ -44,7 +49,7 @@ public class OrderAdapter extends BaseAdapter {
         orderDateAndCarModel.setText(DateUtils.fromLocalDateToMyDateFormatString(orderDTO.getDate()) + " || " + orderDTO.getCarBrandModel());
         orderLicensePlateAndDescription.setText(orderDTO.getCarLicensePlate() + " || " + orderDTO.getDescription());
 
-*/
+
         return convertView;
     }
 

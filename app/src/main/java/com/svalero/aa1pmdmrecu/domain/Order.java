@@ -11,7 +11,7 @@ import com.svalero.aa1pmdmrecu.database.TimestampConverter;
 import java.time.LocalDate;
 
 @Entity
-public class Order {
+public class Order implements Comparable<Order> {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -74,6 +74,10 @@ public class Order {
     }
 
 
+    @Override
+    public int compareTo(Order o) {
+        return date.compareTo(o.date);
+    }
 
 
     @Ignore

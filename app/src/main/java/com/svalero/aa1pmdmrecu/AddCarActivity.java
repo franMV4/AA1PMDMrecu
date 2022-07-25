@@ -150,12 +150,15 @@ public class AddCarActivity extends AppCompatActivity {
 
 
     public void takePhoto(View view) {
-      /*  Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+      /* TODO hacer foto con camara
+       Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, 1);
         }
+        */
 
-       */if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) !=
+        //TODO SELECCIONAR FOTO DE GALERIA
+       if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) !=
                 PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.CAMERA}, 1);
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -163,6 +166,9 @@ public class AddCarActivity extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         }
+
+
+
 
     }
 
@@ -190,6 +196,8 @@ public class AddCarActivity extends AppCompatActivity {
             ImageView imageView = findViewById(R.id.car_imageView);
             imageView.setImageBitmap(imageBitmap);
         }
+
+
     }
 
 

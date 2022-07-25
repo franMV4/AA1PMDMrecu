@@ -46,12 +46,15 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
     public Spinner findSpinner;
     private final String[] FIND_SPINNER_OPTIONS = new String[]{"Fecha", "Cliente", "Coche", "Matrícula"};
     private final String DEFAULT_STRING = "";
-    private final int TAKE_PICTURE = 1;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_order);
+
 
         car = new Car();
         client = new Client();
@@ -84,7 +87,6 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.order_actionbar, menu);
@@ -106,6 +108,7 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
         });
         return super.onCreateOptionsMenu(menu);
     }
+
 
     private void orderList() {
 
@@ -147,8 +150,6 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
     }
 
 
-
-
     private void orderBy(String orderBy) {
         this.orderBy = orderBy;
 
@@ -172,8 +173,6 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
         orderDTOArrayAdapter.notifyDataSetChanged();
     }
 
-
-
     private void loadOrdersDTO() {
         ordersDTOArrayList.clear();
         ordersArrayList.clear();
@@ -196,9 +195,6 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
             ordersDTOArrayList.add(orderDTO);
         }
     }
-
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -221,6 +217,7 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
                 return super.onOptionsItemSelected(item);
         }   // End switch
     }
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -266,6 +263,7 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
     }
 
 
+
     private void deleteOrder(AdapterView.AdapterContextMenuInfo info) {
         Order order = ordersArrayList.get(info.position);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -288,7 +286,6 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
         builder.create().show();
 
     }
-
 
     private void showDetails(int position) {
 
@@ -313,6 +310,7 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
         frameLayout.setVisibility(View.VISIBLE);
     }
 
+
     public void addOrder(View view) {
         Intent intent = new Intent(this, AddOrderActivity.class);
         startActivity(intent);
@@ -327,12 +325,20 @@ public class ViewOrderActivity extends AppCompatActivity implements AdapterView.
     public void hiddeDetails() {
         frameLayout.setVisibility(View.GONE);
     }
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
