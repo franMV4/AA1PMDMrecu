@@ -31,7 +31,7 @@ public class DetailFragment extends Fragment {
     public FloatingActionButton closeButton;
 
     public DetailFragment() {
-        // Required empty public constructor
+
     }
 
     @Override

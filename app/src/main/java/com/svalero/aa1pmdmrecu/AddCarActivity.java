@@ -150,22 +150,13 @@ public class AddCarActivity extends AppCompatActivity {
 
 
     public void takePhoto(View view) {
-      /* TODO hacer foto con camara
+      // TODO SELECCIONAR FOTO DE GALERIA
        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, 1);
         }
-        */
 
-        //TODO SELECCIONAR FOTO DE GALERIA
-       if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) !=
-                PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{ Manifest.permission.CAMERA}, 1);
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-            }
-        }
+
 
 
 
@@ -176,7 +167,7 @@ public class AddCarActivity extends AppCompatActivity {
 
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
-/*
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
@@ -184,20 +175,6 @@ public class AddCarActivity extends AppCompatActivity {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             carImage.setImageBitmap(imageBitmap);
         }
-    }*/
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            // Coloca la foto en un ImageView que debería tener en el layout de la Activity
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            ImageView imageView = findViewById(R.id.car_imageView);
-            imageView.setImageBitmap(imageBitmap);
-        }
-
-
     }
 
 

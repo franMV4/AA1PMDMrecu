@@ -67,13 +67,13 @@ public class AddOrderActivity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("id_spinner_client", "position " + position + ", id " + id);  // BORRAR
-                Log.i("id_spinner_client", String.valueOf(clients.get(clientSpinner.getSelectedItemPosition()).getId()));   // BORRAR
+                Log.i("id_spinner_client", "position " + position + ", id " + id);
+                Log.i("id_spinner_client", String.valueOf(clients.get(clientSpinner.getSelectedItemPosition()).getId()));
                 rellenarSpinners(clients.get(clientSpinner.getSelectedItemPosition()).getId());
-                Log.i("id_spinner_car", String.valueOf(carSpinner.getCount()));   // BORRAR
-                if (carSpinner.getCount() > 0) {                                           // BORRAR
-                    Log.i("id_spinner_car", String.valueOf(cars.get(carSpinner.getSelectedItemPosition()).getId())); // BORRAR
-                }                                                               // BORRAR
+                Log.i("id_spinner_car", String.valueOf(carSpinner.getCount()));
+                if (carSpinner.getCount() > 0) {
+                    Log.i("id_spinner_car", String.valueOf(cars.get(carSpinner.getSelectedItemPosition()).getId()));
+                }
             }
 
             @Override
@@ -118,7 +118,7 @@ public class AddOrderActivity extends AppCompatActivity {
         intent = getIntent();
         modifyOrder = intent.getBooleanExtra("modify_order", false);
 
-        if (modifyOrder) {  // Si se edita una moto, obtiene sus datos y los pinta en el formulario
+        if (modifyOrder) {
             order.setId(intent.getIntExtra("id", 0));
             tvDate.setText(DateUtils.fromLocalDateToMyDateFormatString
                     (LocalDate.parse(intent.getStringExtra("date"))));
@@ -180,10 +180,10 @@ public class AddOrderActivity extends AppCompatActivity {
                     .fallbackToDestructiveMigration().build();
             clients.addAll(dbClient.clientDao().getAll());
 
-            // Crea un array del tamaño de la lista de clientes
+
             String[] arrayClientSpinner = new String[clients.size()];
 
-            int i = 0;      // Rellena el spinner con el nombre y apellido de los clientes
+            int i = 0;
             for (Client client : clients) {
                 arrayClientSpinner[i] = client.getName() + " " + client.getSurname();
                 Log.i("spinner_client", arrayClientSpinner[i]);
@@ -204,7 +204,7 @@ public class AddOrderActivity extends AppCompatActivity {
 
             String[] arrayCarSpinner = new String[cars.size()];
 
-            int j = 0;      // Rellena el spinner con la marca y modelo de las motos
+            int j = 0;
             for (Car car : cars) {
                 arrayCarSpinner[j] = car.getBrand() + " " + car.getModel();
                 Log.i("spinner_car", arrayCarSpinner[j]);

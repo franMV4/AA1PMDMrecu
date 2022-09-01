@@ -110,9 +110,9 @@ public class OrderDTO implements Comparable {
                 "id=" + id +
                 ", date=" + date +
                 ", clientNameSurname='" + clientNameSurname + '\'' +
-                ", bikeBrandModel='" + carBrandModel + '\'' +
+                ", carBrandModel='" + carBrandModel + '\'' +
                 ", description='" + description + '\'' +
-                ", bikeImageOrder=" + Arrays.toString(carImageOrder) +
+                ", carImageOrder=" + Arrays.toString(carImageOrder) +
                 '}';
     }
 
