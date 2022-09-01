@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AA1PMDMrecu</string>
+    <string name="add_client">Add client</string>
+    <string name="direction">Direction</string>
+    <string name="add_button">Add</string>
+    <string name="license_plate">License plate</string>
+    <string name="surname">Surname</string>
+    <string name="name">Name</string>
+    <string name="brand">Brand</string>
+    <string name="model">Model</string>
+    <string name="client">Client</string>
+    <string name="client_capital">CLIENT</string>
+    <string name="car_capital">CAR</string>
+    <string name="order_capital">ORDER</string>
+    <string name="no_retired">Is not retired</string>
+    <string name="retired">Is retired</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
+    <string name="car">Car</string>
+    <string name="modify_capital">MODIFY</string>
+    <string name="are_you_sure_delete_order">Are you sure to delete the order?</string>
+    <string name="yes_capital">YES</string>
+    <string name="no_capital">NO</string>
+    <string name="are_you_sure_delete_client">Are you sure to delete the client?</string>
+    <string name="are_you_sure_delete_car">Are you sure to delete the car?</string>
+    <string name="added_order">Order added</string>
+    <string name="modified_order">Order modified</string>
+    <string name="complete_all_fields">Complete all the data</string>
+    <string name="select_car">Select a car</string>
+    <string name="added_client">Client added</string>
+    <string name="modified_client">Client modified</string>
+    <string name="select_map_position">Select a position at the map</string>
+    <string name="added_car">Car added</string>
+    <string name="modified_car">Car modified</string>
+</resources>

@@ -206,11 +206,11 @@ public class AddClientActivity extends AppCompatActivity implements OnMapReadyCa
     @Override
     public void onMapClick(@NonNull LatLng latLng) {
 
-        if (marker != null)     // Si el marker NO está vacio,
-            marker.remove();    // lo borramos para asignarle las coordenadas del click
+        if (marker != null)
+            marker.remove();
         marker = map.addMarker(new MarkerOptions().position(latLng));
-        client.setLatitude((float) latLng.latitude);    // Asignamos las coordenadas del marker a la
-        client.setLongitude((float) latLng.longitude);   // dirección del cliente
+        client.setLatitude((float) latLng.latitude);
+        client.setLongitude((float) latLng.longitude);
 
     }
 

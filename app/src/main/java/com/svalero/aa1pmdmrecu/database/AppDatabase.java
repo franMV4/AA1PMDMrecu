@@ -11,7 +11,7 @@ import com.svalero.aa1pmdmrecu.domain.Client;
 import com.svalero.aa1pmdmrecu.domain.Order;
 
 
-@Database(entities = {Car.class, Client.class, Order.class}, version = 1, exportSchema = false)
+@Database(entities = {Car.class, Client.class, Order.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
 

@@ -6,7 +6,7 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Car {
+public class Car implements Comparable<Car> {
 
 
     @PrimaryKey(autoGenerate = true)
@@ -100,5 +100,10 @@ public class Car {
     }
 
 
-
+    @Override
+    public int compareTo(Car o) {
+        return brand.compareTo(o.brand);
+    }
 }
+
+

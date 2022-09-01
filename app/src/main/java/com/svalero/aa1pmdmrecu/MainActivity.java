@@ -19,5 +19,31 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addCar(View view) {
+        Intent intent = new Intent(this, AddCarActivity.class);
+        startActivity(intent);
+    }
+
+    public void addOrder(View view) {
+        Intent intent = new Intent(this, AddOrderActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewCar(View view) {
+        Intent intent = new Intent(this, ViewCarActivity.class);
+        startActivity(intent);
+    }
+    public void viewOrder(View view) {
+        Intent intent = new Intent(this, ViewOrderActivity.class);
+        startActivity(intent);
+    }
+    public void viewClient(View view) {
+        Intent intent = new Intent(this, ViewClientActivity.class);
+        startActivity(intent);
+    }
+
+
+
+
 
 }
